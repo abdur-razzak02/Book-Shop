@@ -11,7 +11,7 @@ import Statistics from "./components/Statistics/Statistics";
 import About from "./components/About/About";
 import SelectedCart from "./components/SelectedCart/SelectedCart";
 import Wishlist from "./components/Wishlist/Wishlist";
-import { HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
   {
@@ -22,12 +22,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Cards></Cards>,
-        loader: () => fetch("/GadgetData.json"),
+        loader: () => fetch("/bookData.json"),
       },
       {
         path: "/details/:product_id",
         element: <ProductDetails></ProductDetails>,
-        loader: () => fetch("/GadgetData.json"),
+        loader: () => fetch("/bookData.json"),
       },
 
       {
@@ -35,26 +35,26 @@ const router = createBrowserRouter([
         element: <Dashboard></Dashboard>,
         children: [
           {
-            path: '/dashboard',
+            path: "/dashboard",
             element: <SelectedCart></SelectedCart>,
-            loader: () => fetch("/GadgetData.json"),
+            loader: () => fetch("/bookData.json"),
           },
           {
-            path: '/dashboard/wishlist',
+            path: "/dashboard/wishlist",
             element: <Wishlist />,
-            loader: () => fetch("/GadgetData.json")
+            loader: () => fetch("/bookData.json"),
           },
-        ]
+        ],
       },
-      
+
       {
         path: "/statistics",
         element: <Statistics></Statistics>,
       },
       {
-        path: '/about',
-        element: <About></About>
-      }
+        path: "/about",
+        element: <About></About>,
+      },
     ],
   },
 ]);
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <HelmetProvider>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </HelmetProvider>
   </StrictMode>
 );

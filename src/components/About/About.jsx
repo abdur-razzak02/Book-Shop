@@ -4,24 +4,16 @@ const About = () => {
   return (
     <div className="bg-white p-5 sm:p-10 sm:w-2/3 sm:mx-auto sm:my-10 rounded-xl mx-5 ">
       <Helmet>
-        <title>About | Gadget Heaven</title>
+        <title>About | Boi Poka </title>
       </Helmet>
       <h1 className="text-4xl text-center font-bold mb-5 text-[#9538E2]">
-        Gadget Heaven
+      Boi Poka
       </h1>
       <p className="text-lg mb-3 font-thin ">
-        {" "}
-        Discover the latest in cutting-edge technology at <b>Gadget Heaven</b>!
-        We bring you the best in smartphones, laptops, wearables, and smart home
-        devices, curated for quality and innovation. Whether you are a tech
-        enthusiast, gamer, or looking to upgrade your home with the latest
-        gadgets, our store has everything you need. With a focus on customer
-        satisfaction, competitive pricing, and expert support,{" "}
-        <b>Gadget Heaven</b> is your go-to destination for all things tech.
-        Explore, compare, and find the perfect device to suit your lifestyle!
+        <b>Boi Poka</b> is more than a store - it’s a gathering place for book lovers of all ages and backgrounds. Our mission is to share our love for books and create a space where every reader can find stories that speak to them. We offer a thoughtfully curated selection, including fiction, non-fiction, children’s literature, and academic texts, all carefully chosen to spark curiosity and foster knowledge. Whether you’re looking for a quiet read or a community of fellow book enthusiasts, you’ll find it here at Boi Poka. Let’s celebrate the magic of books together!
       </p>
       <h2 className="font-medium">
-        Location: 132/5 Finlay Square <br /> Nasirabad, Chittagong
+        Location: 132/5 Boi Poka <br /> Andarkilla, Chittagong
       </h2>
       <h3 className=" font-medium">Contact: +88 01645 995231</h3>
 
@@ -39,7 +31,7 @@ const About = () => {
             Submit to newsletter
             <input type="checkbox" className="toggle" />
           </label>
-          <button className="btn bg-[#9538E2] text-white hover:text-black w-40 mx-auto">Send</button>
+          <button className="btn bg-[#9538E2] text-white hover:text-black w-40 mx-auto">Subscribe</button>
         </div>
       </div>
     </div>

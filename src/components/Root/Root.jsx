@@ -13,7 +13,7 @@ const Root = () => {
     
     return (
         <div className="bg-gray-100">
-            <Helmet><title>Gadget Heaven | Home</title></Helmet>
+            <Helmet><title>Boi Poka | Home</title></Helmet>
             {location === '/' ? 
                 <div className="relative">
             <Navbar></Navbar> 

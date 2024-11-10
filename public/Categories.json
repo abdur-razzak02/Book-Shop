@@ -1,27 +1,9 @@
 [
-    {
-      "id": 0,
-      "category": "All Products"
-    },
-    {
-      "id": 1,
-      "category": "Mobile"
-    },
-    {
-      "id": 2,
-      "category": "Laptop"
-    },
-    {
-      "id": 3,
-      "category": "Gadget"
-    },
-    {
-      "id": 4,
-      "category": "Smart Watch"
-    },
-    {
-      "id": 5,
-      "category": "Tablet"
-    }
-  ]
-  
+  { "id": 0, "category": "All Books" },
+  { "id": 1, "category": "Fiction" },
+  { "id": 3, "category": "Classic" },
+  { "id": 4, "category": "Fantasy" },
+  { "id": 2, "category": "Dystopian" },
+  { "id": 6, "category": "Horror" },
+  { "id": 5, "category": "Historical Fiction" }
+]

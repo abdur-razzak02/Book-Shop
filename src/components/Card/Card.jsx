@@ -1,20 +1,15 @@
 import { Link } from "react-router-dom";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Card = ({ card }) => {
-    const {
-    product_id,
-    product_title,
-    product_image,
-    price
-  } = card;
+  const { product_id, product_title, product_image, price } = card;
 
   return (
     <div className="card bg-base-100 shadow-md mt-0 pt-0">
       <figure className="px-5 pt-5 w-full">
         <img
           src={product_image}
-          alt="product"
+          alt="book-image"
           className="rounded-xl bg-gray-100 border h-60 w-full object-cover"
         />
       </figure>
@@ -34,6 +29,6 @@ const Card = ({ card }) => {
 };
 
 Card.propTypes = {
-    card: PropTypes.object
-}
+  card: PropTypes.object,
+};
 export default Card;

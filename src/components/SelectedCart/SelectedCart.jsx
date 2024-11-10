@@ -4,14 +4,13 @@ import { TiDeleteOutline } from "react-icons/ti";
 import { FaSort } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import successImage from './../../assets/success.png'
+import successImage from "./../../assets/success.png";
 
 const SelectedCart = () => {
   const allcards = useLoaderData();
   const [total, setTotal] = useState(0);
   const [products, setProducts] = useState([]);
   const [storedProduct, setStoredProduct] = useState([]);
-
 
   useEffect(() => {
     const storedCartList = getStoredCartList();
@@ -31,7 +30,7 @@ const SelectedCart = () => {
       toast.error("No Item Found");
       return;
     }
-    document.getElementById("purchaseModal").showModal()
+    document.getElementById("purchaseModal").showModal();
     localStorage.removeItem("cart-list");
     setStoredProduct([]);
   };
@@ -56,10 +55,10 @@ const SelectedCart = () => {
   };
 
   // navigate to home
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const navigateToHome = () => {
-    navigate('/')
-  }
+    navigate("/");
+  };
 
   return (
     <div className="container mx-auto px-5 xl:px-0">
@@ -70,24 +69,27 @@ const SelectedCart = () => {
             Total Cost: {total?.toFixed(2)} $
           </h1>
           <div className="flex gap-2">
-          <button
-            onClick={() => handleSortByPrice()}
-            className="border rounded-full border-purple-700 py-1 sm:py-2 px-2 sm:px-4 font-semibold flex items-center gap-2 text-[12px] sm:text-base"
-          >
-            Sort By Price <FaSort />
-          </button>
-          <button
-            onClick={() => handlePurchase()}
-            className="rounded-full bg-[#9538E2]  py-1 sm:py-2 px-2 sm:px-4 text-[12px] sm:text-base text-white font-semibold disabled"
-          >
-            Purchase
-          </button>
+            <button
+              onClick={() => handleSortByPrice()}
+              className="border rounded-full border-purple-700 py-1 sm:py-2 px-2 sm:px-4 font-semibold flex items-center gap-2 text-[12px] sm:text-base"
+            >
+              Sort By Price <FaSort />
+            </button>
+            <button
+              onClick={() => handlePurchase()}
+              className="rounded-full bg-[#9538E2]  py-1 sm:py-2 px-2 sm:px-4 text-[12px] sm:text-base text-white font-semibold disabled"
+            >
+              Purchase
+            </button>
           </div>
         </div>
       </div>
 
       {/* Modal */}
-      <dialog id="purchaseModal" className="modal modal-bottom sm:modal-middle px-5">
+      <dialog
+        id="purchaseModal"
+        className="modal modal-bottom sm:modal-middle px-5"
+      >
         <div className="modal-box text-center justify-items-center">
           <img src={successImage} alt="successImage" />
           <h3 className="font-bold text-3xl mt-5">Payment Successful</h3>
@@ -97,7 +99,12 @@ const SelectedCart = () => {
           {/* <p className="text-gray-500 font-semibold">Total: { total?.toFixed(2)} $</p> */}
           <div className="modal-action">
             <form method="dialog">
-              <button onClick={()=>navigateToHome()} className="btn bg-[#9538E2] text-white hover:bg-[#a44aed] w-40">Close</button>
+              <button
+                onClick={() => navigateToHome()}
+                className="btn bg-[#9538E2] text-white hover:bg-[#a44aed] w-40"
+              >
+                Close
+              </button>
             </form>
           </div>
         </div>
@@ -117,13 +124,20 @@ const SelectedCart = () => {
               />
             </div>
             <div className="flex justify-between items-center w-full ">
-              <div className="sm:space-y-2">
+              <div className="sm:space-y-1">
                 <h1 className="font-semibold sm:text-2xl">
                   {product.product_title}
                 </h1>
-                <h1 className="text-gray-500 text-[12px] sm:text-base">{product.description}</h1>
-                <h1 className="font-semibold text-[13px] sm:text-xl">
-                  Price: {product.price}$
+                <h1 className="text-[12px] sm:text-base">
+                  Author:{" "}
+                  <span className="font-semibold">{product.author}</span>
+                </h1>
+                <h1 className="text-gray-500 text-[12px] sm:text-base">
+                  Publisher:{" "}
+                  <span className="font-semibold">{product.publisher}</span>
+                </h1>
+                <h1 className="text-[13px] sm:text-base">
+                  Price: <span className="font-semibold">{product.price}$</span>
                 </h1>
               </div>
               <div className="px-0 sm:px-10 flex justify-center items-center">
