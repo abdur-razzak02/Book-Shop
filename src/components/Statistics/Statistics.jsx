@@ -1,115 +1,50 @@
 import { Helmet } from "react-helmet";
-import { PureComponent } from "react";
 import {
-  ComposedChart,
-  Line,
-  Area,
   Bar,
+  BarChart,
+  ResponsiveContainer,
+  Tooltip,
   XAxis,
   YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  Scatter,
-  ResponsiveContainer,
 } from "recharts";
 
-const data = [
-  {
-    name: "Page A",
-    uv: 590,
-    pv: 800,
-    amt: 1400,
-    cnt: 490,
-  },
-  {
-    name: "Page B",
-    uv: 868,
-    pv: 967,
-    amt: 1506,
-    cnt: 590,
-  },
-  {
-    name: "Page C",
-    uv: 1397,
-    pv: 1098,
-    amt: 989,
-    cnt: 350,
-  },
-  {
-    name: "Page D",
-    uv: 1480,
-    pv: 1200,
-    amt: 1228,
-    cnt: 480,
-  },
-  {
-    name: "Page E",
-    uv: 1520,
-    pv: 1108,
-    amt: 1100,
-    cnt: 460,
-  },
-  {
-    name: "Page F",
-    uv: 1400,
-    pv: 680,
-    amt: 1700,
-    cnt: 380,
-  },
+const barChartData = [
+  { category: "Fiction", books: 6 },
+  { category: "Classic", books: 6 },
+  { category: "Fantasy", books: 3 },
+  { category: "Dystopian", books: 2 },
+  { category: "Horror", books: 1 },
+  { category: "Historical Fiction", books: 3 },
 ];
-
-export class Example extends PureComponent {
-  static demoUrl =
-    "https://codesandbox.io/p/sandbox/simple-composed-chart-lyz572";
-}
 
 const Statistics = () => {
   return (
-    <div className="bg-[#9538E2] text-white py-10 px-5 xl:px-0">
+    <div className="">
       <Helmet>
         <title>Statistics | Boi Poka </title>
       </Helmet>
-      <div className="container mx-auto text-center">
-        <h1 className="text-3xl lg:text-5xl font-bold">Statistics</h1>
-        <p className="py-6 sm:w-2/3 mx-auto">
-          At <b>Boi Poka</b>, our community is united by a love for books and
-          storytelling. Each number reflects the heart of our bookshop, from the
-          diverse genres on our shelves to the loyal readers who visit us every
-          day. Here’s a glimpse into the vibrant world we’ve built together, one
-          book at a time!
-        </p>
+      <div className="bg-[#9538E2] text-white py-10 px-5 xl:px-0">
+        <div className="container mx-auto text-center">
+          <h1 className="text-3xl lg:text-5xl font-bold">Statistics</h1>
+          <p className="py-6 sm:w-2/3 mx-auto">
+            At <b>Boi Poka</b>, our community is united by a love for books and
+            storytelling. Each number reflects the heart of our bookshop, from
+            the diverse genres on our shelves to the loyal readers who visit us
+            every day. Here’s a glimpse into the vibrant world we’ve built
+            together, one book at a time!
+          </p>
+        </div>
       </div>
-
-      <div>
-        <ResponsiveContainer width="100%" height="100%">
-          <ComposedChart
-            width={500}
-            height={400}
-            data={data}
-            margin={{
-              top: 20,
-              right: 20,
-              bottom: 20,
-              left: 20,
-            }}
-          >
-            <CartesianGrid stroke="#f5f5f5" />
-            <XAxis dataKey="name" scale="band" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Area
-              type="monotone"
-              dataKey="amt"
-              fill="#8884d8"
-              stroke="#8884d8"
-            />
-            <Bar dataKey="pv" barSize={20} fill="#413ea0" />
-            <Line type="monotone" dataKey="uv" stroke="#ff7300" />
-            <Scatter dataKey="cnt" fill="red" />
-          </ComposedChart>
-        </ResponsiveContainer>
+      <div className="justify-center flex mt-5 sm:mt-10 lg:mt-16">
+        <div className="w-full px-5 sm:px-0 mr-5 sm:w-2/3 lg:w-7/12">
+          <ResponsiveContainer height={500} width="100%">
+            <BarChart data={barChartData}>
+              <XAxis dataKey={"category"}></XAxis> <Tooltip></Tooltip>
+              <YAxis></YAxis>
+              <Bar dataKey={"books"} fill="#8884d8"></Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
       </div>
     </div>
   );
