@@ -21,13 +21,13 @@ const Statistics = () => {
   return (
     <div className="">
       <Helmet>
-        <title>Statistics | Boi Poka </title>
+        <title>Statistics | Noble Readers </title>
       </Helmet>
       <div className="bg-[#9538E2] text-white py-10 px-5 xl:px-0">
         <div className="container mx-auto text-center">
           <h1 className="text-3xl lg:text-5xl font-bold">Statistics</h1>
           <p className="py-6 sm:w-2/3 mx-auto">
-            At <b>Boi Poka</b>, our community is united by a love for books and
+            At <b>Noble Readers</b>, our community is united by a love for books and
             storytelling. Each number reflects the heart of our bookshop, from
             the diverse genres on our shelves to the loyal readers who visit us
             every day. Here’s a glimpse into the vibrant world we’ve built

@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="bg-white mt-20 px-5 lg:px-0">
       <div className="container mx-auto border-b pb-5 pt-12 text-center space-y-2">
-        <h1 className="text-2xl font-bold text-black">Boi Poka </h1>
+        <h1 className="text-2xl font-bold text-black">Noble Readers </h1>
         <p className="text-gray-600">
           Dive deep into the captivating plots, characters, and themes that make
           each book a timeless masterpiece.

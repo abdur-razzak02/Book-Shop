@@ -49,7 +49,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to={"/"} className="sm:text-xl font-bold">
-            Boi Poka 
+          Noble Readers 
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">

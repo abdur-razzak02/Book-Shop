@@ -39,7 +39,7 @@ const ProductDetails = () => {
   return (
     <div className="bg-[#9538E2] relative sm:mb-72 py-10">
       <Helmet>
-        <title>{product_title} | Boi Poka </title>
+        <title>{product_title} | Noble Readers </title>
       </Helmet>
       <div className="px-5 lg:px-0 container mx-auto sm:pb-36">
         <div className="hero text-white container mx-auto rounded-b-2xl sm:pb-10 sm:mb-10">
