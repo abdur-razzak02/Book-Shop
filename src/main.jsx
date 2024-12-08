@@ -12,6 +12,10 @@ import About from "./components/About/About";
 import SelectedCart from "./components/SelectedCart/SelectedCart";
 import Wishlist from "./components/Wishlist/Wishlist";
 import { HelmetProvider } from "react-helmet-async";
+import AuthProvider from "./provider/AuthProvider";
+import Login from "./components/pages/Login";
+import SignUp from "./components/pages/SignUp";
+import PrivateRoute from "./provider/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -26,13 +30,17 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:product_id",
-        element: <ProductDetails></ProductDetails>,
+        element: <PrivateRoute>
+          <ProductDetails></ProductDetails>
+        </PrivateRoute>,
         loader: () => fetch("/bookData.json"),
       },
 
       {
         path: "/dashboard",
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoute>
+          <Dashboard></Dashboard>
+        </PrivateRoute>,
         children: [
           {
             path: "/dashboard",
@@ -46,7 +54,6 @@ const router = createBrowserRouter([
           },
         ],
       },
-
       {
         path: "/statistics",
         element: <Statistics></Statistics>,
@@ -55,6 +62,14 @@ const router = createBrowserRouter([
         path: "/about",
         element: <About></About>,
       },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>
+      },
     ],
   },
 ]);
@@ -62,7 +77,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <HelmetProvider>
+      <AuthProvider>
       <RouterProvider router={router} />
+      </AuthProvider>
     </HelmetProvider>
   </StrictMode>
 );
